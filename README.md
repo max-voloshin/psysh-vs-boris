@@ -1,7 +1,8 @@
 Boris VS PsySH
 ==============
 
-Boris:
+Boris
+-----
 
     $ php boris.php
 
@@ -29,7 +30,8 @@ Boris:
     [5] boris> $car = new Car($model, $brand, 2014);
     {model: {name: // 'x5'}; brand: {name: // 'BMW'; country: {name: // 'Germany'}}; year: // 2014}
 
-PsySH:
+PsySH
+-----
 
     $ php psysh.php
 
