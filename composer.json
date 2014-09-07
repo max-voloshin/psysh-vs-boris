@@ -1,0 +1,22 @@
+{
+    "name": "max-voloshin/psysh-vs-boris",
+    "description": "Code for demonstration of difference between psysh and boris",
+    "require": {
+        "d11wtq/boris": "dev-master",
+        "psy/psysh": "dev-develop"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Max Voloshin",
+            "email": "voloshin.dp@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "MaxVoloshin\\PsyshVsBoris\\": "src/",
+            "": "src/"
+        }
+    }
+}
