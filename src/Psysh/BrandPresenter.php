@@ -18,14 +18,9 @@ class BrandPresenter extends ObjectPresenter
      */
     protected function getProperties($value, \ReflectionClass $class)
     {
-        $properties = [
+        return [
             'name' => $value->getName(),
             'country' => $value->getCountry()
         ];
-
-        return array_merge(
-            parent::getProperties($value, $class),
-            $properties
-        );
     }
 }

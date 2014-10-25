@@ -18,13 +18,8 @@ class ModelPresenter extends ObjectPresenter
      */
     protected function getProperties($value, \ReflectionClass $class)
     {
-        $properties = [
+        return [
             'name' => $value->getName()
         ];
-
-        return array_merge(
-            parent::getProperties($value, $class),
-            $properties
-        );
     }
 }

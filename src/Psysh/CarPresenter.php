@@ -18,16 +18,11 @@ class CarPresenter extends ObjectPresenter
      */
     protected function getProperties($value, \ReflectionClass $class)
     {
-        $properties = [
+        return [
             'model' => $value->getModel(),
             'brand' => $value->getBrand(),
             'year' => $value->getYear()
         ];
-
-        return array_merge(
-            parent::getProperties($value, $class),
-            $properties
-        );
     }
 
 } 
