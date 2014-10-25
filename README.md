@@ -6,91 +6,43 @@ Boris
 
     $ php boris.php
 
-    [1] boris> $x = ['object' => (object)['property' => 'value'], 'array' => ['key' => 'value'], 'bool' => false, 'string' => 'some'];
-    // array(
-    //   'object' => object(stdClass)(
-    //     'property' => 'value'
-    //   ),
-    //   'array' => array(
-    //     'key' => 'value'
-    //   ),
-    //   'bool' => false,
-    //   'string' => 'some'
+    [1] boris> $x = (object)['property' => 'value'];
+    // object(stdClass)(
+    //   'property' => 'value'
     // )
 
-    [2] boris> $country = new Country('Germany');
-    {name: // 'Germany'}
+    [2] boris> $country = new Country('Ukraine');
+    {name: // 'Ukraine'}
 
-    [3] boris> $brand = new Brand('BMW', $country);
-    {name: // 'BMW'; country: {name: // 'Germany'}}
-
-    [4] boris> $model = new Model('x5');
-    {name: // 'x5'}
-
-    [5] boris> $car = new Car($model, $brand, 2014);
-    {model: {name: // 'x5'}; brand: {name: // 'BMW'; country: {name: // 'Germany'}}; year: // 2014}
+    [3] boris> $brand = new Brand('OWOX', $country);
+    {name: // 'OWOX'; country: {name: // 'Ukraine'}}
 
 PsySH
 -----
 
     $ php psysh.php
 
-    >>> $x = ['object' => (object)['property' => 'value'], 'array' => ['key' => 'value'], 'bool' => false, 'string' => 'some']
-    => [
-           "object" => <stdClass #0000000068f00f7400000001465774ba> {
-               property: "value"
-           },
-           "array"  => [
-               "key" => "value"
-           ],
-           "bool"   => false,
-           "string" => "some"
-       ]
-
-    >>> dump $x --depth 1
-    [
-        "object" => <stdClass #0000000068f00f7400000001465774ba>,
-        "array"  => Array(1),
-        "bool"   => false,
-        "string" => "some"
-    ]
-
-    >>> $country = new Country('Germany')
-    => <Country #0000000068f00f4100000001465774ba> {
-           name: "Germany"
+    >>> $x = (object)['property' => 'value']
+    => <stdClass #000000002bc8b4ca0000000154eaed21> {
+           property: "value"
        }
 
-    >>> $brand = new Brand('BMW', $country)
-    => <Brand #0000000068f00f7c00000001465774ba> {
-           name: "BMW",
-           country: <Country #0000000068f00f4100000001465774ba> {
-               name: "Germany"
+    >>> $country = new Country('Ukraine')
+    => <Country #000000002bc8b4c50000000154eaed21> {
+           name: "Ukraine"
+       }
+
+    >>> $brand = new Brand('OWOX', $country)
+    => <Brand #000000002bc8b4c00000000154eaed21> {
+           name: "OWOX",
+           country: <Country #000000002bc8b4c50000000154eaed21> {
+               name: "Ukraine"
            }
        }
 
-    >>> $model = new Model('x5')
-    => <Model #0000000068f00f4900000001465774ba> {
-           name: "x5"
-       }
-
-    >>> $car = new Car($model, $brand, 2014)
-    => <Car #0000000068f00f7900000001465774ba> {
-           model: <Model #0000000068f00f4900000001465774ba> {
-               name: "x5"
-           },
-           brand: <Brand #0000000068f00f7c00000001465774ba> {
-               name: "BMW",
-               country: <Country #0000000068f00f4100000001465774ba> {
-                   name: "Germany"
-               }
-           },
-           year: 2014
-       }
-
-    >>> dump $car --depth 1
-    <Car #0000000068f00f7900000001465774ba> {
-        model: <Model #0000000068f00f4900000001465774ba>,
-        brand: <Brand #0000000068f00f7c00000001465774ba>,
-        year: 2014
+    >>> dump $brand --depth 1
+    <Brand #000000002bc8b4c00000000154eaed21> {
+        name: "OWOX",
+        country: <Country #000000002bc8b4c50000000154eaed21>
     }
 
