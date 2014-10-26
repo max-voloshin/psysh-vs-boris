@@ -18,8 +18,6 @@ class CountryPresenter extends ObjectPresenter
      */
     protected function getProperties($value, \ReflectionClass $class)
     {
-        return [
-            'name' => $value->getName()
-        ];
+        return ['name' => $value->getName()];
     }
 }
